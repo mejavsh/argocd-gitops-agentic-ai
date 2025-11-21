@@ -1,0 +1,6 @@
+resources:
+  - ../../manifests/ollama
+  - ../../manifests/agent-api
+  - ../../manifests/chromadb
+  - ../../manifests/ingress
+

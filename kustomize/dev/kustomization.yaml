@@ -1,0 +1,11 @@
+resources:
+  - ../base
+
+patchesStrategicMerge:
+  - patches.yaml
+
+configMapGenerator:
+  - name: env-config
+    behavior: merge
+    literals:
+      - ENV=dev

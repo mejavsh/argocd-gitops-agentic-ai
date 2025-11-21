@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent-api
+spec:
+  replicas: 4
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+      - name: ollama
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+            memory: "20Gi"
+

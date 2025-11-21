@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent-api
+spec:
+  replicas: 1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama
+spec:
+  template:
+    spec:
+      containers:
+      - name: ollama
+        resources:
+          limits:
+            cpu: "1"
+            memory: "2Gi"
